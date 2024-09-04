@@ -8,14 +8,14 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-    - task: TerraformTaskV4@4
-      displayName: Terraform Init
-      inputs:
-        provider: 'azurerm'
-        command: 'init'
-        backendServiceArm: 'Azure subscription 1(0ca97444-2659-431c-a371-313879a222d8)'
-        backendAzureRmResourceGroupName: 'mtc-rg'
-        backendAzureRmStorageAccountName: 'mtcrgstorageaccount'
-        backendAzureRmContainerName: 'prod-tfstate'
-        backendAzureRmKey: 'prod.terraform.tfstat'
-
+   
+- task: TerraformTaskV4@4
+  displayName: TF init
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'Azure subscription 1(0ca97444-2659-431c-a371-313879a222d8)'
+    backendAzureRmResourceGroupName: 'mtc-rg'
+    backendAzureRmStorageAccountName: 'mtcrgstorageaccount'
+    backendAzureRmContainerName: 'prod-tfstate'
+    backendAzureRmKey: 'prod.terraform.tfstat'
